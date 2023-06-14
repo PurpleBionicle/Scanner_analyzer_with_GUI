@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'end_variant_without_extension.ui'
+## Form generated from reading UI file 'end_variant_with_extension.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -48,32 +48,59 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.label_5)
 
-        self.name_label = QTextEdit(self.centralwidget)
-        self.name_label.setObjectName(u"name_label")
-        self.name_label.setMaximumSize(QSize(16777215, 150))
+        self.comboBox = QComboBox(self.centralwidget)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(100)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.comboBox.sizePolicy().hasHeightForWidth())
+        self.comboBox.setSizePolicy(sizePolicy)
+        self.comboBox.setMinimumSize(QSize(40, 70))
         font1 = QFont()
-        font1.setPointSize(20)
+        font1.setPointSize(17)
         font1.setBold(True)
-        self.name_label.setFont(font1)
-        self.name_label.setLayoutDirection(Qt.LeftToRight)
-        self.name_label.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.comboBox.setFont(font1)
+        self.comboBox.setLayoutDirection(Qt.LeftToRight)
 
-        self.verticalLayout.addWidget(self.name_label)
-
-        self.special_label = QComboBox(self.centralwidget)
-        self.special_label.addItem("")
-        self.special_label.setObjectName(u"special_label")
-        font2 = QFont()
-        font2.setPointSize(25)
-        font2.setBold(True)
-        self.special_label.setFont(font2)
-        self.special_label.setLayoutDirection(Qt.LeftToRight)
-
-        self.verticalLayout.addWidget(self.special_label)
+        self.verticalLayout.addWidget(self.comboBox)
 
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(20)
+        font2.setBold(True)
+        self.label.setFont(font2)
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout.addWidget(self.label)
@@ -81,7 +108,7 @@ class Ui_MainWindow(object):
         self.input_label = QTextEdit(self.centralwidget)
         self.input_label.setObjectName(u"input_label")
         self.input_label.setMaximumSize(QSize(16777215, 150))
-        self.input_label.setFont(font1)
+        self.input_label.setFont(font2)
         self.input_label.setLayoutDirection(Qt.LeftToRight)
         self.input_label.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
@@ -89,21 +116,20 @@ class Ui_MainWindow(object):
 
         self.check_button = QPushButton(self.centralwidget)
         self.check_button.setObjectName(u"check_button")
-        sizePolicy = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.check_button.sizePolicy().hasHeightForWidth())
-        self.check_button.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.check_button.sizePolicy().hasHeightForWidth())
+        self.check_button.setSizePolicy(sizePolicy1)
         self.check_button.setMaximumSize(QSize(16777215, 16777215))
-        self.check_button.setFont(font1)
-        self.check_button.setStyleSheet(u"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));\n"
-"background-color: rgb(0, 255, 0);")
+        self.check_button.setFont(font2)
+        self.check_button.setStyleSheet(u"background-color: rgb(46, 194, 126);")
 
         self.verticalLayout.addWidget(self.check_button)
 
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font1)
+        self.label_2.setFont(font2)
         self.label_2.setLayoutDirection(Qt.LeftToRight)
         self.label_2.setAlignment(Qt.AlignCenter)
 
@@ -120,32 +146,31 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.label_8)
 
-        self.result_label = QTextEdit(self.centralwidget)
+        self.result_label = QLabel(self.centralwidget)
         self.result_label.setObjectName(u"result_label")
-        self.result_label.setMaximumSize(QSize(16777215, 150))
-        self.result_label.setFont(font1)
+        self.result_label.setMinimumSize(QSize(0, 60))
+        self.result_label.setFont(font2)
         self.result_label.setLayoutDirection(Qt.LeftToRight)
-        self.result_label.setStyleSheet(u"\n"
-"background-color: rgb(192, 191, 188);\n"
-"")
+        self.result_label.setStyleSheet(u"background-color: rgb(192, 191, 188);")
+        self.result_label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout.addWidget(self.result_label)
 
-        self.label_7 = QLabel(self.centralwidget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font3)
-        self.label_7.setLayoutDirection(Qt.LeftToRight)
-        self.label_7.setAlignment(Qt.AlignCenter)
+        self.label6 = QLabel(self.centralwidget)
+        self.label6.setObjectName(u"label6")
+        self.label6.setFont(font3)
+        self.label6.setLayoutDirection(Qt.LeftToRight)
+        self.label6.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.label_7)
+        self.verticalLayout.addWidget(self.label6)
 
-        self.result_label_2 = QTextEdit(self.centralwidget)
+        self.result_label_2 = QLabel(self.centralwidget)
         self.result_label_2.setObjectName(u"result_label_2")
-        self.result_label_2.setMaximumSize(QSize(16777215, 150))
-        self.result_label_2.setFont(font1)
+        self.result_label_2.setMinimumSize(QSize(0, 60))
+        self.result_label_2.setFont(font2)
         self.result_label_2.setLayoutDirection(Qt.LeftToRight)
-        self.result_label_2.setStyleSheet(u"background-color: rgb(192, 191, 188);\n"
-"")
+        self.result_label_2.setStyleSheet(u"background-color: rgb(192, 191, 188);")
+        self.result_label_2.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout.addWidget(self.result_label_2)
 
@@ -178,7 +203,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.splitter_3)
 
-        self.error_label_1 = QLabel(self.centralwidget)
+        self.splitter_4 = QSplitter(self.centralwidget)
+        self.splitter_4.setObjectName(u"splitter_4")
+        self.splitter_4.setOrientation(Qt.Horizontal)
+        self.error_label_1 = QLabel(self.splitter_4)
         self.error_label_1.setObjectName(u"error_label_1")
         font4 = QFont()
         font4.setPointSize(14)
@@ -187,31 +215,30 @@ class Ui_MainWindow(object):
         self.error_label_1.setLayoutDirection(Qt.LeftToRight)
         self.error_label_1.setStyleSheet(u"color: rgb(237, 51, 59);")
         self.error_label_1.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout.addWidget(self.error_label_1)
-
-        self.error_label_2 = QLabel(self.centralwidget)
+        self.splitter_4.addWidget(self.error_label_1)
+        self.error_label_2 = QLabel(self.splitter_4)
         self.error_label_2.setObjectName(u"error_label_2")
         self.error_label_2.setFont(font4)
         self.error_label_2.setLayoutDirection(Qt.LeftToRight)
         self.error_label_2.setStyleSheet(u"color: rgb(237, 51, 59);")
         self.error_label_2.setAlignment(Qt.AlignCenter)
+        self.splitter_4.addWidget(self.error_label_2)
 
-        self.verticalLayout.addWidget(self.error_label_2)
+        self.verticalLayout.addWidget(self.splitter_4)
 
         self.splitter_2 = QSplitter(self.centralwidget)
         self.splitter_2.setObjectName(u"splitter_2")
         self.splitter_2.setOrientation(Qt.Horizontal)
         self.label_6 = QLabel(self.splitter_2)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font1)
+        self.label_6.setFont(font2)
         self.label_6.setLayoutDirection(Qt.LeftToRight)
         self.label_6.setAlignment(Qt.AlignCenter)
         self.splitter_2.addWidget(self.label_6)
         self.station = QTextEdit(self.splitter_2)
         self.station.setObjectName(u"station")
         self.station.setMaximumSize(QSize(16777215, 150))
-        self.station.setFont(font1)
+        self.station.setFont(font2)
         self.station.setLayoutDirection(Qt.LeftToRight)
         self.station.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.splitter_2.addWidget(self.station)
@@ -223,22 +250,19 @@ class Ui_MainWindow(object):
         self.splitter.setOrientation(Qt.Horizontal)
         self.add_button = QPushButton(self.splitter)
         self.add_button.setObjectName(u"add_button")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.add_button.sizePolicy().hasHeightForWidth())
-        self.add_button.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.add_button.sizePolicy().hasHeightForWidth())
+        self.add_button.setSizePolicy(sizePolicy2)
         self.add_button.setMaximumSize(QSize(16777215, 16777215))
-        font5 = QFont()
-        font5.setPointSize(17)
-        font5.setBold(True)
-        self.add_button.setFont(font5)
-        self.add_button.setStyleSheet(u"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));\n"
-"background-color: rgb(0, 255, 0);")
+        self.add_button.setFont(font1)
+        self.add_button.setStyleSheet(u"background-color: rgb(46, 194, 126);\n"
+"")
         self.splitter.addWidget(self.add_button)
         self.pushButton_2 = QPushButton(self.splitter)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setFont(font5)
+        self.pushButton_2.setFont(font1)
         self.pushButton_2.setStyleSheet(u"background-color: rgb(237, 51, 59);")
         self.splitter.addWidget(self.pushButton_2)
 
@@ -257,7 +281,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.special_label.setCurrentIndex(0)
         self.working_label.setCurrentIndex(0)
         self.region_label.setCurrentIndex(0)
         self.taking_label.setCurrentIndex(0)
@@ -270,30 +293,69 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041e\u043a\u043d\u043e \u0434\u043b\u044f \u0441\u0447\u0438\u0442\u044b\u0432\u0430\u043d\u0438\u044f", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u0437 \u0432\u044b\u043f\u0430\u0434\u0430\u044e\u0449\u0435\u0433\u043e \u0441\u043f\u0438\u0441\u043a\u0430 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u0415\u0441\u043b\u0438 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0430 \u043d\u0435\u0442, \u0442\u043e \u0432\u044b\u0431\u0435\u0440\u0435\u0442\u0435 \"\u0434\u0440\u0443\u0433\u043e\u0435\"", None))
-        self.name_label.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u0412\u0430\u0448\u0435 \u0438\u043c\u044f</p></body></html>", None))
-        self.special_label.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0434\u0440\u0443\u0433\u043e\u0435", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0441\u0442 \u0422\u0435\u0441\u0442\u043e\u0432\u0438\u0447", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0410\u0440\u0441\u0435\u043d\u043e\u0432 \u0410\u043d\u0442\u043e\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u0410\u0440\u0445\u0438\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0411\u043e\u0433\u0430\u0442\u0447\u0443\u043a \u041e\u043b\u0435\u0433 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"\u0412\u0438\u043d\u043d\u0438\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"\u0414\u0430\u043d\u0438\u043b\u043e\u0432 \u041b\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"\u0414\u0443\u043d\u0430\u0435\u0432 \u041c\u0438\u0445\u0430\u0438\u043b\n"
+"", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"\u0417\u0432\u043e\u0440\u044b\u0433\u0438\u043d \u041d\u0438\u043a\u043e\u043b\u0430\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"\u0417\u0438\u0433\u0430\u043d\u0448\u0438\u043d \u0420\u0438\u0448\u0430\u0442 \u0418\u043b\u044c\u0434\u0430\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"\u0417\u044b\u0431\u0440\u0438\u043a\u043e\u0432 \u0410\u0440\u0442\u0435\u043c", None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0437\u0430\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u0438\u0447", None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0440\u043f\u043e\u0432 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d", None))
+        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0440\u043f\u043e\u0432\u0438\u0447 \u0410\u043d\u0434\u0440\u0435\u0439 \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow", u"\u041a\u0438\u043c \u0411\u043e\u0440\u0438\u0441 \u0412\u0438\u0442\u0430\u043b\u044c\u0435\u0432\u0438\u0447", None))
+        self.comboBox.setItemText(14, QCoreApplication.translate("MainWindow", u"\u041a\u043e\u0440\u043e\u043b\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(15, QCoreApplication.translate("MainWindow", u"\u041a\u043e\u0442\u0435\u043b\u044c\u043d\u0438\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(16, QCoreApplication.translate("MainWindow", u"\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(17, QCoreApplication.translate("MainWindow", u"\u041a\u0443\u0440\u0437\u0430\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(18, QCoreApplication.translate("MainWindow", u"\u041c\u0443\u0445\u0430\u043c\u044f\u0442\u0436\u0430\u043d\u043e\u0432 \u0410\u0439\u0440\u0430\u0442 \u0428\u0430\u043c\u0438\u043b\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(19, QCoreApplication.translate("MainWindow", u"\u041d\u0435\u0441\u0442\u0435\u0440\u0435\u043d\u043a\u043e \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(20, QCoreApplication.translate("MainWindow", u"\u041e\u043b\u0435\u0439\u043d\u0438\u043a \u0412\u0438\u0442\u0430\u043b\u0438\u0439", None))
+        self.comboBox.setItemText(21, QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0441\u0442\u0435\u0440\u043d\u0438\u043a\u043e\u0432 \u0418\u0433\u043e\u0440\u044c \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(22, QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0434\u0438\u043a\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(23, QCoreApplication.translate("MainWindow", u"\u0421\u043a\u0440\u0438\u043f\u043d\u0438\u0447\u0435\u043d\u043a\u043e \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(24, QCoreApplication.translate("MainWindow", u"\u0421\u0443\u043b\u0435\u0439\u043c\u0430\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(25, QCoreApplication.translate("MainWindow", u"\u0422\u0440\u043e\u043d\u0438\u0446\u043a\u0438\u0439 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(26, QCoreApplication.translate("MainWindow", u"\u0423\u0442\u0438\u043d \u0413\u0440\u0438\u0433\u043e\u0440\u0438\u0439", None))
+        self.comboBox.setItemText(27, QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0440\u043d\u0435\u043d\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(28, QCoreApplication.translate("MainWindow", u"\u0425\u0440\u0430\u043c\u043e\u0432 \u042e\u0440\u0438\u0439 \u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(29, QCoreApplication.translate("MainWindow", u"\u0428\u0443\u0445\u043d\u043e\u0432 \u041d\u0438\u043a\u0438\u0442\u0430 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
+        self.comboBox.setItemText(30, QCoreApplication.translate("MainWindow", u"\u042d\u043b\u044c\u0434\u044b\u0448 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u042e\u0440\u044c\u0435\u0432\u0438\u0447\n"
+"", None))
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043c\u0435\u0441\u0442\u0438\u0442\u0435 \u043a\u0443\u0440\u0441\u043e\u0440 \u0432 \u043d\u0438\u0436\u043d\u0435\u0435 \u043f\u043e\u043b\u0435 \u0438 \u043d\u0430\u0447\u0438\u043d\u0430\u0439\u0442\u0435 \u0441\u043a\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.check_button.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442:", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435", None))
-        self.result_label.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u0441\u0435\u0440\u0438\u0439\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:", None))
-        self.result_label_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.result_label.setText("")
+        self.label6.setText(QCoreApplication.translate("MainWindow", u"\u0441\u0435\u0440\u0438\u0439\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:", None))
+        self.result_label_2.setText("")
         self.working_label.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0418\u0441\u043f\u0440\u0430\u0432\u043d\u043e", None))
         self.working_label.setItemText(1, QCoreApplication.translate("MainWindow", u"\u041d\u0435 \u0438\u0441\u043f\u0440\u0430\u0432\u043d\u043e", None))
 
@@ -317,3 +379,4 @@ class Ui_MainWindow(object):
         self.add_button.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u0442\u0430\u0431\u043b\u0438\u0446\u0443", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
+
