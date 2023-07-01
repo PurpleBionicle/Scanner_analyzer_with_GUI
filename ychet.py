@@ -23,13 +23,12 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QLabel,
 
 def print_to_file(items):
     name = f'резервная_копия.txt'
-    # print(str(items))
     with open(name, 'a') as file:
         # file.write(
         #     f'Номер | Время | Сотрудник |'
             # f' Название оборудования | Серийный номер | Отсканированная строка |\n')
         if len(items.line) >= 10:
-            file.write('*|'+str(items))
+            file.write('* |'+str(items))
             file.write('\n')
 
 
@@ -430,7 +429,13 @@ class Item:
 
     def __str__(self):
         now = datetime.datetime.now()
-        return f'{now.strftime("%d-%m-%Y %H:%M")} | {self.name} | {self.item} | {self.serial} | {self.line} |'
+        self.name = self.name.replace('\n','')
+        self.station = self.station.replace('\n','')
+        self.taking = self.taking.replace('\n','')
+        self.working = self.working.replace('\n','')
+        self.line = self.line.replace('\n','')
+        return f' {now.strftime("%d-%m-%Y %H:%M")} | {self.name} | {self.station} | {self.taking} ' \
+               f'| {self.item} | {self.serial} | {self.working} | {self.line} |'
 
 
 class Numbers_analyzer:
