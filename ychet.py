@@ -10,15 +10,15 @@ import time
 from langdetect import detect
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
+                            QMetaObject, QObject, QPoint, QRect,
+                            QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+                           QFont, QFontDatabase, QGradient, QIcon,
+                           QImage, QKeySequence, QLinearGradient, QPainter,
+                           QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QLabel,
-    QMainWindow, QProgressBar, QPushButton, QSizePolicy,
-    QStatusBar, QTextEdit, QWidget)
+                               QMainWindow, QProgressBar, QPushButton, QSizePolicy,
+                               QStatusBar, QTextEdit, QWidget)
 
 
 def print_to_file(items):
@@ -26,11 +26,9 @@ def print_to_file(items):
     with open(name, 'a') as file:
         # file.write(
         #     f'Номер | Время | Сотрудник |'
-            # f' Название оборудования | Серийный номер | Отсканированная строка |\n')
-        if len(items.line) >= 10:
-            file.write('* |'+str(items))
-            file.write('\n')
-
+        # f' Название оборудования | Серийный номер | Отсканированная строка |\n')
+        file.write('* |' + str(items))
+        file.write('\n')
 
 
 class Ui_MainWindow(object):
@@ -40,7 +38,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(982, 916)
         MainWindow.setMinimumSize(QSize(800, 800))
         MainWindow.setStyleSheet(u"background-color: rgb(192, 191, 188);\n"
-"background-color: rgb(222, 221, 218);")
+                                 "background-color: rgb(222, 221, 218);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -168,7 +166,7 @@ class Ui_MainWindow(object):
         self.add_button.setMaximumSize(QSize(16777215, 16777215))
         self.add_button.setFont(font4)
         self.add_button.setStyleSheet(u"background-color: rgb(46, 194, 126);\n"
-"")
+                                      "")
 
         self.gridLayout.addWidget(self.add_button, 14, 0, 1, 4)
 
@@ -317,103 +315,171 @@ class Ui_MainWindow(object):
         self.taking_label.setCurrentIndex(0)
         self.region_label.setCurrentIndex(0)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u041e\u043a\u043d\u043e \u0434\u043b\u044f \u0441\u0447\u0438\u0442\u044b\u0432\u0430\u043d\u0438\u044f", None))
-        self.error_label_1.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 ", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u0437 \u0432\u044b\u043f\u0430\u0434\u0430\u044e\u0449\u0435\u0433\u043e \u0441\u043f\u0438\u0441\u043a\u0430 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435", None))
-        self.working_label.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0418\u0441\u043f\u0440\u0430\u0432\u043d\u043e", None))
-        self.working_label.setItemText(1, QCoreApplication.translate("MainWindow", u"\u041d\u0435 \u0438\u0441\u043f\u0440\u0430\u0432\u043d\u043e", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow",
+                                                             u"\u041e\u043a\u043d\u043e \u0434\u043b\u044f \u0441\u0447\u0438\u0442\u044b\u0432\u0430\u043d\u0438\u044f",
+                                                             None))
+        self.error_label_1.setText(QCoreApplication.translate("MainWindow",
+                                                              u"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 ",
+                                                              None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow",
+                                                        u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u0437 \u0432\u044b\u043f\u0430\u0434\u0430\u044e\u0449\u0435\u0433\u043e \u0441\u043f\u0438\u0441\u043a\u0430 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435",
+                                                        None))
+        self.working_label.setItemText(0, QCoreApplication.translate("MainWindow",
+                                                                     u"\u0418\u0441\u043f\u0440\u0430\u0432\u043d\u043e",
+                                                                     None))
+        self.working_label.setItemText(1, QCoreApplication.translate("MainWindow",
+                                                                     u"\u041d\u0435 \u0438\u0441\u043f\u0440\u0430\u0432\u043d\u043e",
+                                                                     None))
 
-        self.check_button.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c", None))
+        self.check_button.setText(
+            QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c",
+                                       None))
         self.result_label_2.setText("")
-        self.label6.setText(QCoreApplication.translate("MainWindow", u"\u0441\u0435\u0440\u0438\u0439\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
-        self.error_label_2.setText(QCoreApplication.translate("MainWindow", u"\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a", None))
+        self.label6.setText(QCoreApplication.translate("MainWindow",
+                                                       u"\u0441\u0435\u0440\u0438\u0439\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:",
+                                                       None))
+        self.pushButton_2.setText(
+            QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
+        self.error_label_2.setText(QCoreApplication.translate("MainWindow",
+                                                              u"\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438\u0439 \u044f\u0437\u044b\u043a",
+                                                              None))
         self.result_label.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043c\u0435\u0441\u0442\u0438\u0442\u0435 \u043a\u0443\u0440\u0441\u043e\u0440 \u0432 \u043d\u0438\u0436\u043d\u0435\u0435 \u043f\u043e\u043b\u0435 \u0438 \u043d\u0430\u0447\u0438\u043d\u0430\u0439\u0442\u0435 \u0441\u043a\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", None))
+        self.label.setText(QCoreApplication.translate("MainWindow",
+                                                      u"\u041f\u043e\u043c\u0435\u0441\u0442\u0438\u0442\u0435 \u043a\u0443\u0440\u0441\u043e\u0440 \u0432 \u043d\u0438\u0436\u043d\u0435\u0435 \u043f\u043e\u043b\u0435 \u0438 \u043d\u0430\u0447\u0438\u043d\u0430\u0439\u0442\u0435 \u0441\u043a\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435",
+                                                      None))
         self.taking_label.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0421\u0434\u0430\u044e", None))
         self.taking_label.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0411\u0435\u0440\u0443", None))
 
-        self.add_button.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u0442\u0430\u0431\u043b\u0438\u0446\u0443", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435", None))
-        self.region_label.setItemText(0, QCoreApplication.translate("MainWindow", u"1 \u0426\u0435\u043d\u0442\u0440", None))
+        self.add_button.setText(QCoreApplication.translate("MainWindow",
+                                                           u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u0442\u0430\u0431\u043b\u0438\u0446\u0443",
+                                                           None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow",
+                                                        u"\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435",
+                                                        None))
+        self.region_label.setItemText(0, QCoreApplication.translate("MainWindow", u"1 \u0426\u0435\u043d\u0442\u0440",
+                                                                    None))
         self.region_label.setItemText(1, QCoreApplication.translate("MainWindow", u"2 \u0421\u0412", None))
         self.region_label.setItemText(2, QCoreApplication.translate("MainWindow", u"3 \u042e\u0412", None))
         self.region_label.setItemText(3, QCoreApplication.translate("MainWindow", u"5 \u0421\u0417", None))
 
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442:", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u0415\u0441\u043b\u0438 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0430 \u043d\u0435\u0442, \u0442\u043e \u0432\u044b\u0431\u0435\u0440\u0435\u0442\u0435 \"\u0434\u0440\u0443\u0433\u043e\u0435\"", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0422\u0435\u0441\u0442 \u0422\u0435\u0441\u0442\u043e\u0432\u0438\u0447", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0410\u0440\u0441\u0435\u043d\u043e\u0432 \u0410\u043d\u0442\u043e\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u0410\u0440\u0445\u0438\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0411\u043e\u0433\u0430\u0442\u0447\u0443\u043a \u041e\u043b\u0435\u0433 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"\u0412\u0438\u043d\u043d\u0438\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"\u0414\u0430\u043d\u0438\u043b\u043e\u0432 \u041b\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"\u0414\u0443\u043d\u0430\u0435\u0432 \u041c\u0438\u0445\u0430\u0438\u043b\n"
-"", None))
-        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"\u0417\u0432\u043e\u0440\u044b\u0433\u0438\u043d \u041d\u0438\u043a\u043e\u043b\u0430\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"\u0417\u0438\u0433\u0430\u043d\u0448\u0438\u043d \u0420\u0438\u0448\u0430\u0442 \u0418\u043b\u044c\u0434\u0430\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"\u0417\u044b\u0431\u0440\u0438\u043a\u043e\u0432 \u0410\u0440\u0442\u0435\u043c", None))
-        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0437\u0430\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u0438\u0447", None))
-        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0440\u043f\u043e\u0432 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d", None))
-        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0440\u043f\u043e\u0432\u0438\u0447 \u0410\u043d\u0434\u0440\u0435\u0439 \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow", u"\u041a\u0438\u043c \u0411\u043e\u0440\u0438\u0441 \u0412\u0438\u0442\u0430\u043b\u044c\u0435\u0432\u0438\u0447", None))
-        self.comboBox.setItemText(14, QCoreApplication.translate("MainWindow", u"\u041a\u043e\u0440\u043e\u043b\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(15, QCoreApplication.translate("MainWindow", u"\u041a\u043e\u0442\u0435\u043b\u044c\u043d\u0438\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(16, QCoreApplication.translate("MainWindow", u"\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(17, QCoreApplication.translate("MainWindow", u"\u041a\u0443\u0440\u0437\u0430\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(18, QCoreApplication.translate("MainWindow", u"\u041c\u0443\u0445\u0430\u043c\u044f\u0442\u0436\u0430\u043d\u043e\u0432 \u0410\u0439\u0440\u0430\u0442 \u0428\u0430\u043c\u0438\u043b\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(19, QCoreApplication.translate("MainWindow", u"\u041d\u0435\u0441\u0442\u0435\u0440\u0435\u043d\u043a\u043e \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(20, QCoreApplication.translate("MainWindow", u"\u041e\u043b\u0435\u0439\u043d\u0438\u043a \u0412\u0438\u0442\u0430\u043b\u0438\u0439", None))
-        self.comboBox.setItemText(21, QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0441\u0442\u0435\u0440\u043d\u0438\u043a\u043e\u0432 \u0418\u0433\u043e\u0440\u044c \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(22, QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0434\u0438\u043a\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(23, QCoreApplication.translate("MainWindow", u"\u0421\u043a\u0440\u0438\u043f\u043d\u0438\u0447\u0435\u043d\u043a\u043e \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(24, QCoreApplication.translate("MainWindow", u"\u0421\u0443\u043b\u0435\u0439\u043c\u0430\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(25, QCoreApplication.translate("MainWindow", u"\u0422\u0440\u043e\u043d\u0438\u0446\u043a\u0438\u0439 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(26, QCoreApplication.translate("MainWindow", u"\u0423\u0442\u0438\u043d \u0413\u0440\u0438\u0433\u043e\u0440\u0438\u0439", None))
-        self.comboBox.setItemText(27, QCoreApplication.translate("MainWindow", u"\u0424\u0430\u0440\u043d\u0435\u043d\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(28, QCoreApplication.translate("MainWindow", u"\u0425\u0440\u0430\u043c\u043e\u0432 \u042e\u0440\u0438\u0439 \u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(29, QCoreApplication.translate("MainWindow", u"\u0428\u0443\u0445\u043d\u043e\u0432 \u041d\u0438\u043a\u0438\u0442\u0430 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
-        self.comboBox.setItemText(30, QCoreApplication.translate("MainWindow", u"\u042d\u043b\u044c\u0434\u044b\u0448 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u042e\u0440\u044c\u0435\u0432\u0438\u0447\n"
-"", None))
+        self.label_2.setText(
+            QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442:", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow",
+                                                        u"\u0415\u0441\u043b\u0438 \u043f\u0440\u0435\u0434\u043c\u0435\u0442\u0430 \u043d\u0435\u0442, \u0442\u043e \u0432\u044b\u0431\u0435\u0440\u0435\u0442\u0435 \"\u0434\u0440\u0443\u0433\u043e\u0435\"",
+                                                        None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow",
+                                                                u"\u0422\u0435\u0441\u0442 \u0422\u0435\u0441\u0442\u043e\u0432\u0438\u0447",
+                                                                None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow",
+                                                                u"\u0410\u0440\u0441\u0435\u043d\u043e\u0432 \u0410\u043d\u0442\u043e\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow",
+                                                                u"\u0410\u0440\u0445\u0438\u043f\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow",
+                                                                u"\u0411\u043e\u0433\u0430\u0442\u0447\u0443\u043a \u041e\u043b\u0435\u0433 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow",
+                                                                u"\u0412\u0438\u043d\u043d\u0438\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow",
+                                                                u"\u0414\u0430\u043d\u0438\u043b\u043e\u0432 \u041b\u0435\u0432 \u0410\u043d\u0434\u0440\u0435\u0435\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow",
+                                                                u"\u0414\u0443\u043d\u0430\u0435\u0432 \u041c\u0438\u0445\u0430\u0438\u043b\n"
+                                                                "", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow",
+                                                                u"\u0417\u0432\u043e\u0440\u044b\u0433\u0438\u043d \u041d\u0438\u043a\u043e\u043b\u0430\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow",
+                                                                u"\u0417\u0438\u0433\u0430\u043d\u0448\u0438\u043d \u0420\u0438\u0448\u0430\u0442 \u0418\u043b\u044c\u0434\u0430\u0440\u043e\u0432\u0438\u0447\n"
+                                                                "", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow",
+                                                                u"\u0417\u044b\u0431\u0440\u0438\u043a\u043e\u0432 \u0410\u0440\u0442\u0435\u043c",
+                                                                None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0430\u0437\u0430\u043a\u043e\u0432 \u0414\u043c\u0438\u0442\u0440\u0438\u0439 \u0412\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u0438\u0447",
+                                                                 None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0430\u0440\u043f\u043e\u0432 \u041a\u043e\u043d\u0441\u0442\u0430\u043d\u0442\u0438\u043d",
+                                                                 None))
+        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0430\u0440\u043f\u043e\u0432\u0438\u0447 \u0410\u043d\u0434\u0440\u0435\u0439 \u042f\u043a\u043e\u0432\u043b\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0438\u043c \u0411\u043e\u0440\u0438\u0441 \u0412\u0438\u0442\u0430\u043b\u044c\u0435\u0432\u0438\u0447",
+                                                                 None))
+        self.comboBox.setItemText(14, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u043e\u0440\u043e\u043b\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(15, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u043e\u0442\u0435\u043b\u044c\u043d\u0438\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(16, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(17, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041a\u0443\u0440\u0437\u0430\u0435\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0410\u043d\u0430\u0442\u043e\u043b\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(18, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041c\u0443\u0445\u0430\u043c\u044f\u0442\u0436\u0430\u043d\u043e\u0432 \u0410\u0439\u0440\u0430\u0442 \u0428\u0430\u043c\u0438\u043b\u043e\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(19, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041d\u0435\u0441\u0442\u0435\u0440\u0435\u043d\u043a\u043e \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(20, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041e\u043b\u0435\u0439\u043d\u0438\u043a \u0412\u0438\u0442\u0430\u043b\u0438\u0439",
+                                                                 None))
+        self.comboBox.setItemText(21, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041f\u0435\u0441\u0442\u0435\u0440\u043d\u0438\u043a\u043e\u0432 \u0418\u0433\u043e\u0440\u044c \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(22, QCoreApplication.translate("MainWindow",
+                                                                 u"\u041f\u0443\u0434\u0438\u043a\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(23, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0421\u043a\u0440\u0438\u043f\u043d\u0438\u0447\u0435\u043d\u043a\u043e \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u0438\u043a\u0442\u043e\u0440\u043e\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(24, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0421\u0443\u043b\u0435\u0439\u043c\u0430\u043d\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(25, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0422\u0440\u043e\u043d\u0438\u0446\u043a\u0438\u0439 \u0420\u043e\u043c\u0430\u043d \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(26, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0423\u0442\u0438\u043d \u0413\u0440\u0438\u0433\u043e\u0440\u0438\u0439",
+                                                                 None))
+        self.comboBox.setItemText(27, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0424\u0430\u0440\u043d\u0435\u043d\u043a\u043e\u0432 \u0420\u043e\u043c\u0430\u043d \u0415\u0432\u0433\u0435\u043d\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(28, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0425\u0440\u0430\u043c\u043e\u0432 \u042e\u0440\u0438\u0439 \u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(29, QCoreApplication.translate("MainWindow",
+                                                                 u"\u0428\u0443\u0445\u043d\u043e\u0432 \u041d\u0438\u043a\u0438\u0442\u0430 \u0412\u0430\u043b\u0435\u0440\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
+        self.comboBox.setItemText(30, QCoreApplication.translate("MainWindow",
+                                                                 u"\u042d\u043b\u044c\u0434\u044b\u0448 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u042e\u0440\u044c\u0435\u0432\u0438\u0447\n"
+                                                                 "", None))
 
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u043d\u0446\u0438\u044f:", None))
-        self.station.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.load1.setText(QCoreApplication.translate("MainWindow", u"\u0447\u0442\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u043d\u0438", None))
+        self.label_6.setText(
+            QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u043d\u0446\u0438\u044f:", None))
+        self.station.setHtml(QCoreApplication.translate("MainWindow",
+                                                        u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                        "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                        "p, li { white-space: pre-wrap; }\n"
+                                                        "</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:600; font-style:normal;\">\n"
+                                                        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+                                                        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>",
+                                                        None))
+        self.load1.setText(QCoreApplication.translate("MainWindow",
+                                                      u"\u0447\u0442\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u043d\u0438",
+                                                      None))
     # retranslateUi
-
-
 
 
 class Item:
@@ -429,11 +495,11 @@ class Item:
 
     def __str__(self):
         now = datetime.datetime.now()
-        self.name = self.name.replace('\n','')
-        self.station = self.station.replace('\n','')
-        self.taking = self.taking.replace('\n','')
-        self.working = self.working.replace('\n','')
-        self.line = self.line.replace('\n','')
+        self.name = self.name.replace('\n', '')
+        self.station = self.station.replace('\n', '')
+        self.taking = self.taking.replace('\n', '')
+        self.working = self.working.replace('\n', '')
+        self.line = self.line.replace('\n', '')
         return f' {now.strftime("%d-%m-%Y %H:%M")} | {self.name} | {self.station} | {self.taking} ' \
                f'| {self.item} | {self.serial} | {self.working} | {self.line} |'
 

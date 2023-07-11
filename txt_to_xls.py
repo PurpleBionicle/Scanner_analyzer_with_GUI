@@ -13,14 +13,17 @@ def from_txt_to_xls(file_name, sep='|', del_txt=False) -> None:
     params: list[str] = []
     with open(file_name) as file:
         line: str = file.readline()
+        "Сделаем разделение для заголовка по указанному сепаратору и выкинем \n"
         params = line.split(sep)[:-1]
         while line != '':
+            "Читаем построчно, делим и создаем лист записей"
             line: str = file.readline()
             records.append(list(line.split(sep)[:-1]))
 
     columns = [[] for _ in range(len(params))]
 
     for i in range(len(params)):
+        "Заполняем по столбикам удаляя пустые строки"
         for record in records:
             if len(record) <= 1:
                 records.remove(record)
@@ -28,6 +31,7 @@ def from_txt_to_xls(file_name, sep='|', del_txt=False) -> None:
             columns[i].append(record[i])
 
     result = dict()
+    "создадим и заполним словарь [параметр заголовка] = столбец"
     for i in range(len(params)):
         try:
             result[params[i]] = columns[i]
@@ -35,9 +39,11 @@ def from_txt_to_xls(file_name, sep='|', del_txt=False) -> None:
             print(
                 'Проблема соотнесения полей и значений (возможно их разное количество из-за разного числа разделителей')
 
+    "Используя Пандас запишем в эксель сформированный словарь"
     df = pd.DataFrame(result)
     df.to_excel(f'{file_name[:-4]}.xlsx', index=False)
 
+    "Если указан флаг удалить исходный текстовый файл, то удаляем"
     if del_txt:
         if os.path.isfile(file_name):
             os.remove(file_name)
