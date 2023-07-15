@@ -150,14 +150,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.result_label_2, 10, 0, 1, 4)
 
-        self.load1 = QLabel(self.centralwidget)
-        self.load1.setObjectName(u"load1")
-        self.load1.setFont(font1)
-        self.load1.setLayoutDirection(Qt.LeftToRight)
-        self.load1.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.load1, 16, 2, 1, 2)
-
         self.label6 = QLabel(self.centralwidget)
         self.label6.setObjectName(u"label6")
         self.label6.setFont(font1)
@@ -264,6 +256,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.comboBox, 0, 0, 1, 4)
 
+        self.load1 = QLabel(self.centralwidget)
+        self.load1.setObjectName(u"load1")
+        self.load1.setFont(font1)
+        self.load1.setLayoutDirection(Qt.LeftToRight)
+        self.load1.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.load1, 16, 1, 1, 3)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.error_label_1.raise_()
         self.pushButton_2.raise_()
@@ -323,7 +323,6 @@ class Ui_MainWindow(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.result_label_2.setText("")
-        self.load1.setText(QCoreApplication.translate("MainWindow", u"\u0447\u0442\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u043d\u0438", None))
         self.label6.setText(QCoreApplication.translate("MainWindow", u"\u0441\u0435\u0440\u0438\u0439\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:", None))
         self.error_label_1.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 ", None))
         self.check_button.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c", None))
@@ -387,5 +386,12 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(30, QCoreApplication.translate("MainWindow", u"\u042d\u043b\u044c\u0434\u044b\u0448 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u042e\u0440\u044c\u0435\u0432\u0438\u0447\n"
 "", None))
 
+        self.load1.setText(QCoreApplication.translate("MainWindow", u"\u0447\u0442\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u043d\u0438", None))
     # retranslateUi
 
+Error: ./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
+./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
+./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
+./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
+
+while executing '/home/bionic/.local/lib/python3.10/site-packages/PySide6/Qt/libexec/uic -g python ./forms/pyside/end_variant_with_extension.ui'

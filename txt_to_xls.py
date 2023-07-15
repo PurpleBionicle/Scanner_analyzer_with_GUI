@@ -4,6 +4,7 @@ import os
 
 def from_txt_to_xls(file_name, sep='|', del_txt=False) -> None:
     """
+    Является отдельным файлом от остального дистрибутива
     :param file_name: name txt file with .txt
     :param sep: separator with which the file will be divided into cells
     :param del_txt: after working delete (True) or not (False) txt file
