@@ -1,13 +1,18 @@
-import datetime
 import pandas as pd
+import datetime
+import secret
 
 
 class Item:
+    """
+    Укороченная версия - см. описание в файле Item
+    """
+
     def __init__(self, item: str, serial: str, line: str):
         self.line: str = line
         self.item: str = item
         self.serial: str = serial
-        self.name: str = '***REMOVED***'
+        self.name: str = secret.name
 
     def __str__(self):
         now = datetime.datetime.now()
@@ -28,16 +33,31 @@ class Numbers_analyzer:
             self.lines = [x.replace(' ', '') for x in self.lines]
 
     def analyzer(self):
+        """
+        Главный метод - по поданной отсканированный строке делает анализ по заведенному оборудованию
+        :param line: отсканированная строка
+        :return: сопоставленное оборудование
+        Все существует 3 семейства, к каждому из которых собственный подход
+        1) TRP или NWA - сканируются с большим количеством запятых (как и MDP - оно вынесено в отдельный случай):
+        TRP-*,*,*,*,*,Low
+        Дальнейшее описание алгоритма в __TRP_analyzer
+        2) остальное (не считая MDP): не имеет запятых (подробнее в __get_serial_number, __get_name)
+        3) MDP - имя и серийный, как п.2, но серийный начинается с нулей (которые надо удалить), между 2 и 3 запятой
+        """
+
+        "Показан первый случае, если падаем в else - 2,3"
         name = ''
         for line in self.lines:
             if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find(
                     'MDP') == -1:
                 self.items.append(self.__TRP_analyzer(line))
             else:
+                "п.2,3"
                 line = line.rstrip()
                 item: str = self.__get_name(line)
                 serial: str = self.__get_serial_number(line)
                 if line.find('MDP') != -1:
+                    "п.3"
                     line_ = line.replace('\n', '').rstrip()
                     line_ = line_.replace(' ', '')
                     params = line_.split(',')
@@ -47,6 +67,11 @@ class Numbers_analyzer:
                 self.items.append(Item(item, serial, line))
 
     def __get_serial_number(self, line: str) -> str:
+        """
+        11 всегда 'S' после нее вырезаем номер
+        :param line: отсканированная строка
+        :return: полученный из нее серийный номер
+        """
         # serial_number_index: int = name[::-1].find('S')
         serial_number_index: int = 10
         if len(line) >= 11:
@@ -55,6 +80,11 @@ class Numbers_analyzer:
         return 'скорее всего прибор должен иметь серийный номер вида S******'
 
     def __get_name(self, line: str):
+        """
+        Читаем из файлов возможные варианты и находим нужный
+        :param line: отсканированная строка
+        :return: Возвращает сопоставленный предмет
+        """
         variants, IDs = self.__fill_variants_and_IDs()
 
         correct_number: str = ''
@@ -69,6 +99,7 @@ class Numbers_analyzer:
         return name
 
     def __fill_variants_and_IDs(self):
+        "Заполним варианты в виде словаря(сокращение):предмет"
         variants: dict = {}
         IDs = []
         with open(f'Список_оборудования.txt', 'r+') as file:
@@ -83,9 +114,12 @@ class Numbers_analyzer:
 
     def __TRP_analyzer(self, line: str) -> Item:
         def __fill_name():
+            "Вырожденный случай"
             if line.find('MODEM-EA') != -1:
                 return 'MODEM-EA'
 
+            "Два варианты концовок - low/high"
+            "Приведенные варианты имеют одинаковое начало, поэтому вынесены отдельно"
             item: str = f'Радиоблок {line_[:index]}'
             if 'lo' in params[-1].lower() or 'lo' in line_.lower():
                 params[-1] = 'Low'
@@ -115,6 +149,7 @@ class Numbers_analyzer:
 
         item = __fill_name()
         serial = params[2]
+        "Удалим незначащие нули для серийного номера"
         while serial[0] == '0':
             serial = serial[1:]
         return Item(serial=serial, line=line, item=item)

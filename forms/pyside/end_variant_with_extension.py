@@ -389,9 +389,3 @@ class Ui_MainWindow(object):
         self.load1.setText(QCoreApplication.translate("MainWindow", u"\u0447\u0442\u0435\u043d\u0438\u0435 \u0438\u043c\u0435\u043d\u0438", None))
     # retranslateUi
 
-Error: ./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
-./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
-./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
-./forms/pyside/end_variant_with_extension.ui: Warning: Deprecated enum value QComboBox::AdjustToMinimumContentsLength was encountered.
-
-while executing '/home/bionic/.local/lib/python3.10/site-packages/PySide6/Qt/libexec/uic -g python ./forms/pyside/end_variant_with_extension.ui'
