@@ -9,7 +9,7 @@ def print_to_backup_file(items: Item):
     :return: Ничего, результатом является измененный файл резервной копии
     """
     name = f'резервная_копия.txt'
-    with open(name, 'a') as file:
+    with open(name, 'a',encoding='utf-8') as file:
         # file.write(f'Номер | Время | Сотрудник |'
         # f' Название оборудования | Серийный номер | Отсканированная строка |\n')
         file.write('* |' + str(items))

@@ -117,7 +117,7 @@ class Analyzer:
         "Заполним варианты в виде словаря(сокращение):предмет"
         variants: dict = {}
         IDs = []
-        with open(f'Список_оборудования.txt', 'r+') as file:
+        with open(f'Список_оборудования.txt', 'r+',encoding='utf-8') as file:
             lines: list[str] = file.readlines()
             lines = [x.rstrip() for x in lines]
         for line in lines:

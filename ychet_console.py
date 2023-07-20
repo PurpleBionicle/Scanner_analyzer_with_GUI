@@ -27,7 +27,7 @@ class Numbers_analyzer:
         self.file_name: str = 'Результат_инвентаризации.txt'
 
     def work_with_file(self) -> None:
-        with open(f'Сканы.txt', 'r+') as file:
+        with open(f'Сканы.txt', 'r+', encoding='utf-8') as file:
             self.lines: list[str] = file.readlines()
             self.lines = [x.rstrip() for x in self.lines]
             self.lines = [x.replace(' ', '') for x in self.lines]
@@ -48,6 +48,7 @@ class Numbers_analyzer:
         "Показан первый случае, если падаем в else - 2,3"
         name = ''
         for line in self.lines:
+            line = self.change_layout(line)
             if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find(
                     'MDP') == -1:
                 self.items.append(self.__TRP_analyzer(line))
@@ -102,7 +103,7 @@ class Numbers_analyzer:
         "Заполним варианты в виде словаря(сокращение):предмет"
         variants: dict = {}
         IDs = []
-        with open(f'Список_оборудования.txt', 'r+') as file:
+        with open(f'Список_оборудования.txt', 'r+', encoding='utf-8') as file:
             lines: list[str] = file.readlines()
             lines = [x.rstrip() for x in lines]
         for line in lines:
@@ -195,6 +196,17 @@ class Numbers_analyzer:
 
         df = pd.DataFrame(result)
         df.to_excel(f'{self.file_name[:-4]}.xlsx', index=False)
+
+    def change_layout(self, line):
+        """
+        :param line: прочитанная строка
+        :return: та же строка, но перевод на англ. раскладку
+        """
+        layout = dict(zip(map(ord, "йцукенгшщзхъфывапролджэячсмитьбю.ё"
+                                   'ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,Ё'),
+                          "qwertyuiop[]asdfghjkl;'zxcvbnm,./`"
+                          'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?~'))
+        return line.translate(layout)
 
 
 def main():

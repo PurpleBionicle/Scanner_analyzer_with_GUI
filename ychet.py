@@ -47,7 +47,7 @@ class GUI_controller(QMainWindow):
         число сотрудников необходимо подсчитывать для присвоения номера в окне
         """
         self.count_of_workers = 0
-        with open(f'Список_сотрудников.txt', 'r+') as file:
+        with open(f'Список_сотрудников.txt', 'r+',encoding='utf-8') as file:
             self.lines: list[str] = file.readlines()
             self.lines = [x.rstrip() for x in self.lines]
         for name in self.lines:
@@ -210,7 +210,7 @@ class GUI_controller(QMainWindow):
 
     def add_workers_to_txt(self, name):
         "Не используемый метод"
-        with open(f'Список_сотрудников.txt', 'a') as file:
+        with open(f'Список_сотрудников.txt', 'a',encoding='utf-8') as file:
             file.write(f'{name}\n')
 
 
