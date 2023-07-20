@@ -23,6 +23,7 @@ class Analyzer:
 
         "Показан первый случае, если падаем в else - 2,3"
         name = ''
+        line = self.change_layout(line)
         if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find('MDP') == -1:
             return self.__TRP_analyzer(line, name)
         else:
@@ -126,3 +127,15 @@ class Analyzer:
             IDs.append(params[0])
 
         return variants, IDs
+
+    def change_layout(self, line):
+        """
+        :param line: прочитанная строка
+        :return: та же строка, но перевод на англ. раскладку
+        """
+        layout = dict(zip(map(ord, "йцукенгшщзхъфывапролджэячсмитьбю.ё"
+                                   'ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,Ё'),
+                          "qwertyuiop[]asdfghjkl;'zxcvbnm,./`"
+                          'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?~'))
+        return line.translate(layout)
+
