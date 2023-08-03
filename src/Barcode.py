@@ -1,4 +1,5 @@
-from src.Item import Item
+
+from src.Item import *
 
 
 class Analyzer:
@@ -77,6 +78,10 @@ class Analyzer:
             "Вырожденный случай"
             if line.find('MODEM-EA') != -1:
                 return 'MODEM-EA'
+            if line.find('MODEM-EV') != -1:
+                return 'MODEM-EV'
+            if line.find('MODEM-A') != -1:
+                return 'MODEM-A'
 
             "Два варианты концовок - low/high"
             "Приведенные варианты имеют одинаковое начало, поэтому вынесены отдельно"

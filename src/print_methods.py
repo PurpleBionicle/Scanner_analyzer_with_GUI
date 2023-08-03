@@ -1,4 +1,4 @@
-from src.Item import Item
+from src.Item import *
 
 
 def print_to_backup_file(items: Item):

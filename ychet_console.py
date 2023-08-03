@@ -118,6 +118,10 @@ class Numbers_analyzer:
             "Вырожденный случай"
             if line.find('MODEM-EA') != -1:
                 return 'MODEM-EA'
+            if line.find('MODEM-EV') != -1:
+                return 'MODEM-EV'
+            if line.find('MODEM-A') != -1:
+                return 'MODEM-A'
 
             "Два варианты концовок - low/high"
             "Приведенные варианты имеют одинаковое начало, поэтому вынесены отдельно"
@@ -140,6 +144,7 @@ class Numbers_analyzer:
                 if char.isalpha():
                     item += f' {char}-{params[-1]}'
                     return item
+            return item
 
         line_ = line.replace('\n', '').rstrip()
         line_ = line_.replace(' ', '')
