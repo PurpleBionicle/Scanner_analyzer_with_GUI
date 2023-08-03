@@ -23,7 +23,7 @@ class Analyzer:
 
         "Показан первый случае, если падаем в else - 2,3"
         name = ''
-        line = self.change_layout(line)
+        #line = self.change_layout(line)
         if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find('MDP') == -1:
             return self.__TRP_analyzer(line, name)
         else:
@@ -130,6 +130,7 @@ class Analyzer:
 
     def change_layout(self, line):
         """
+        UNUSED - по причине, что переводит, кроме букв, еще и знаки препинаний
         :param line: прочитанная строка
         :return: та же строка, но перевод на англ. раскладку
         """

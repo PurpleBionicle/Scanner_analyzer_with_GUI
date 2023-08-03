@@ -48,7 +48,7 @@ class Numbers_analyzer:
         "Показан первый случае, если падаем в else - 2,3"
         name = ''
         for line in self.lines:
-            line = self.change_layout(line)
+            # line = self.change_layout(line)
             if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find(
                     'MDP') == -1:
                 self.items.append(self.__TRP_analyzer(line))
@@ -199,6 +199,7 @@ class Numbers_analyzer:
 
     def change_layout(self, line):
         """
+        UNUSED - по причине, что переводит, кроме букв, еще и знаки препинаний
         :param line: прочитанная строка
         :return: та же строка, но перевод на англ. раскладку
         """
