@@ -104,6 +104,7 @@ class Analyzer:
                 if char.isalpha():
                     item += f' {char}-{params[-1]}'
                     return item
+            return item
 
         line_ = line.replace('\n', '').rstrip()
         line_ = line_.replace(' ', '')
