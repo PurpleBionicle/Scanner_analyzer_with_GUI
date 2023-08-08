@@ -1,4 +1,3 @@
-
 from src.Item import *
 
 
@@ -24,7 +23,7 @@ class Analyzer:
 
         "Показан первый случае, если падаем в else - 2,3"
         name = ''
-        #line = self.change_layout(line)
+        # line = self.change_layout(line)
         if line.count(',') > 0 and (line.find('TRP') != -1 or line.find('NWA') != -1) and line.find('MDP') == -1:
             return self.__TRP_analyzer(line, name)
         else:
@@ -104,6 +103,7 @@ class Analyzer:
                 if char.isalpha():
                     item += f' {char}-{params[-1]}'
                     return item
+
             return item
 
         line_ = line.replace('\n', '').rstrip()
@@ -124,7 +124,7 @@ class Analyzer:
         "Заполним варианты в виде словаря(сокращение):предмет"
         variants: dict = {}
         IDs = []
-        with open(f'Список_оборудования.txt', 'r+',encoding='utf-8') as file:
+        with open(f'Список_оборудования.txt', 'r+', encoding='utf-8') as file:
             lines: list[str] = file.readlines()
             lines = [x.rstrip() for x in lines]
         for line in lines:
@@ -145,4 +145,3 @@ class Analyzer:
                           "qwertyuiop[]asdfghjkl;'zxcvbnm,./`"
                           'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?~'))
         return line.translate(layout)
-
