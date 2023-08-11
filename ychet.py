@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 
-from src import GUI, print_methods, Google_sheets,Barcode
+from src import GUI, print_methods, Google_sheets, Barcode
 from src.Item import *
 
 from langdetect import detect
@@ -33,6 +33,7 @@ class GUI_controller(QMainWindow):
         self.ui.progressBar.setMinimum(0)
         self.ui.progressBar.setMinimum(10)
         self.ui.progressBar.setRange(0, 10)
+        self.analyze_was_done = False
 
     def __init__(self, parent=None):
         super(GUI_controller, self).__init__(parent)
@@ -47,7 +48,7 @@ class GUI_controller(QMainWindow):
         число сотрудников необходимо подсчитывать для присвоения номера в окне
         """
         self.count_of_workers = 0
-        with open(f'Список_сотрудников.txt', 'r+',encoding='utf-8') as file:
+        with open(f'Список_сотрудников.txt', 'r+', encoding='utf-8') as file:
             self.lines: list[str] = file.readlines()
             self.lines = [x.rstrip() for x in self.lines]
         for name in self.lines:
@@ -76,6 +77,9 @@ class GUI_controller(QMainWindow):
         Основная функция класса, которая сопоставляет отсканированную строку с реальным именем оборудования
         """
         # Number analyzer
+        self.ui.error_label_1.hide()
+        self.ui.error_label_2.hide()
+
         start_time = datetime.datetime.now()
         analyzer = Barcode.Analyzer()
         if self.ui.input_label.toPlainText() == '' or self.ui.input_label.toPlainText() == '\n':
@@ -87,6 +91,8 @@ class GUI_controller(QMainWindow):
             self.ui.result_label.setText(self.item.item) if self.item.item else self.ui.result_label.setText(
                 'Вероятно этого оборудования нет в базе')
             self.ui.result_label_2.setText(self.item.serial)
+
+        self.analyze_was_done = True
         print('analyze ', datetime.datetime.now() - start_time)
 
     def __delete(self):
@@ -137,8 +143,18 @@ class GUI_controller(QMainWindow):
             self.ui.input_label.setStyleSheet("color: rgb(255, 0, 0)")
             flag = False
 
+        if not self.analyze_was_done:
+            "Возникла проблема, что не нажимают на анализ и загружают в гугл"
+            "Так попадает другой результат"
+            self.ui.error_label_1.setText("Обязательно нужно обработать")
+            self.ui.error_label_2.setText("кнопка 'Обработать'")
+            self.ui.error_label_1.show()
+            self.ui.error_label_2.show()
+            print('analyze was not done')
+
         "Если все поля заполнены и на правильном языке"
-        if self.__check_language() and flag:
+        if self.__check_language() and flag and self.analyze_was_done:
+            self.analyze_was_done=False
             self.ui.progressBar.show()
             self.ui.load1.show()
             self.ui.progressBar.setValue(1)
@@ -210,7 +226,7 @@ class GUI_controller(QMainWindow):
 
     def add_workers_to_txt(self, name):
         "Не используемый метод"
-        with open(f'Список_сотрудников.txt', 'a',encoding='utf-8') as file:
+        with open(f'Список_сотрудников.txt', 'a', encoding='utf-8') as file:
             file.write(f'{name}\n')
 
 
